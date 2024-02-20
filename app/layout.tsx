@@ -23,9 +23,9 @@ export default function RootLayout({
           (cn('relative h-full font-sans antialiased'), inter.className)
         }
       >
-        <main className="relative min-h-screen flex-grow flex-1 inset-0 h-full w-full bg-black bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:10px_10px]">
+        <main className="relative flex flex-col min-h-screen inset-0 bg-black bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:10px_10px]">
           <Navbar />
-          {children}
+          <div className="flex-grow flex-1 ">{children}</div>
         </main>
       </body>
     </html>

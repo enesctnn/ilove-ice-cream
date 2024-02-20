@@ -21,6 +21,8 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         'ice-cream':
           'bg-white text-ice-cream-600 shadow-md hover:bg-ice-cream-600/90 hover:text-white',
+        custom:
+          'bg-white text-custom-red-400 shadow-md hover:bg-custom-red-300 hover:text-white',
       },
       size: {
         default: 'h-9 px-4 py-2',

@@ -1,9 +1,19 @@
-import React from 'react';
+import BannerSlideShow from '@/components/BannerSlideShow';
+import OurStoryArticles from '@/components/OurStoryArticles';
+import { Metadata } from 'next';
 
-type Props = {};
+export const metadata: Metadata = {
+  title: 'Our Story',
+  description: 'About Page Of Workshop',
+};
 
-function OurStoryPage({}: Props) {
-  return <div>OurStoryPage</div>;
+function OurStoryPage() {
+  return (
+    <>
+      <BannerSlideShow />
+      <OurStoryArticles />
+    </>
+  );
 }
 
 export default OurStoryPage;

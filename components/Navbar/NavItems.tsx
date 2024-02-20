@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import { Caveat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { GiIceCreamScoop } from 'react-icons/gi';
 import { buttonVariants } from '../ui/button';
 
 const font = Caveat({
@@ -18,10 +19,10 @@ function NavItems() {
       )}
     >
       <div className="space-x-5">
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/our-story">Our Story</NavLink>
+        <CustomLink href="/">Home</CustomLink>
+        <CustomLink href="/our-story">Our Story</CustomLink>
       </div>
-      <Link href="/" className="ml-8">
+      <Link href="/" className="ml-8 hover:scale-110 transition-transform">
         <Image
           width={120}
           height={170}
@@ -30,16 +31,30 @@ function NavItems() {
         />
       </Link>
       <div className="space-x-5">
-        <NavLink href="/best-sellers">Best Sellers</NavLink>
-        <NavLink href="/menu">Menu</NavLink>
-        <Link
-          href="/order"
-          className={buttonVariants({
-            variant: 'ice-cream',
-            size: 'custom',
-          })}
+        <CustomLink
+          href="https://mag.wcoomd.org/uploads/2018/05/blank.pdf"
+          isPdf
         >
-          Order Now
+          Best Sellers
+        </CustomLink>
+        <CustomLink href="/ice-creams.pdf" isPdf>
+          Menu
+        </CustomLink>
+        <Link
+          href="/order-now"
+          className={cn(
+            buttonVariants({
+              variant: 'ice-cream',
+              size: 'custom',
+            }),
+            'group'
+          )}
+        >
+          Order{' '}
+          <GiIceCreamScoop
+            className="rotate-90 group-hover:rotate-180 transition-transform ml-2 -scale-y-100"
+            size={32}
+          />
         </Link>
       </div>
     </div>
@@ -48,20 +63,39 @@ function NavItems() {
 
 export default NavItems;
 
-const NavLink = ({
+const CustomLink = ({
   href,
   children,
+  isPdf,
 }: {
   href: string;
   children: React.ReactNode;
-}) => (
-  <Link
-    href={href}
-    className={cn(
-      'text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-ice-cream-100 pr-1 drop-shadow-md',
-      font.className
-    )}
-  >
-    {children}
-  </Link>
-);
+  isPdf?: boolean;
+}) => {
+  if (isPdf) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        className={cn(
+          'text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-ice-cream-100 pr-1 drop-shadow-white-border',
+          font.className
+        )}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={cn(
+        'text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-ice-cream-100 pr-1 drop-shadow-white-border',
+        font.className
+      )}
+    >
+      {children}
+    </Link>
+  );
+};

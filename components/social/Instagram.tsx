@@ -1,13 +1,12 @@
-import { url } from '@/social';
-import InstagramGrid, { InstagramGridProps } from './InstagramGrid';
-import MaxWidthWrapper from '../MaxWidthWrapper';
-import { Suspense } from 'react';
-import ScrollYWrapper from '../animations/ScrollYWrapper';
-import { Caveat } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { url } from '@/lib/social';
+import { Caveat } from 'next/font/google';
+import { Suspense } from 'react';
+import MaxWidthWrapper from '../MaxWidthWrapper';
+import InstagramGrid, { InstagramGridProps } from './InstagramGrid';
 
 const getInstagramPosts = async () => {
-  const data = await fetch(url);
+  const data = await fetch(url, { next: { revalidate: 3600 } });
   const feed = await data.json();
   return feed.data;
 };
@@ -20,10 +19,10 @@ const font = Caveat({
 async function Instagram() {
   const posts = (await getInstagramPosts()) as InstagramGridProps[];
   return (
-    <ScrollYWrapper>
+    <div className="space-y-10 pt-10 pb-32 bg-ellipse from-custom-red-100 to-custom-red-400">
       <h1
         className={cn(
-          'text-5xl text-center p-5 select-none text-white',
+          'text-5xl text-center p-5 select-none text-white drop-shadow-black-md',
           font.className
         )}
       >
@@ -38,7 +37,7 @@ async function Instagram() {
           <InstagramGrid posts={posts} />
         </Suspense>
       </MaxWidthWrapper>
-    </ScrollYWrapper>
+    </div>
   );
 }
 
