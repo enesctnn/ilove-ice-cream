@@ -15,6 +15,7 @@ export type InstagramGridProps = {
 /**
  * @param array
  * Shuffles an array depends on the index
+ * @returns {array}
  */
 function shuffle(array: any[]) {
   let currentIndex = array.length,
@@ -51,11 +52,23 @@ function InstagramGrid({ posts }: { posts: InstagramGridProps[] }) {
       className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-5"
     >
       {pickedPosts.map((post) => (
-        <a
+        <motion.a
           key={post.id}
           href={post.permalink}
+          style={{ rotate: 0 }}
+          whileHover={{
+            opacity: 0.9,
+            rotate: [8, -5],
+            transition: {
+              repeat: Infinity,
+              repeatType: 'reverse',
+              type: 'spring',
+              damping: 5,
+              mass: 1.1,
+            },
+          }}
           target="_blank"
-          className="relative w-60 h-60 flex hover:opacity-90 bg-black"
+          className="relative w-60 h-60 flex bg-black"
         >
           <Image
             className="object-cover object-center"
@@ -63,7 +76,7 @@ function InstagramGrid({ posts }: { posts: InstagramGridProps[] }) {
             alt={post.caption || 'an instagram post with no caption'}
             fill
           />
-        </a>
+        </motion.a>
       ))}
     </motion.div>
   );

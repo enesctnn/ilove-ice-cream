@@ -105,6 +105,7 @@ const config = {
         'white-sm': '1px 1px 2px rgba(255, 255, 255, 0.4)',
         'white-md': '1px 1px 4px rgba(255, 255, 255, 0.6)',
         'white-lg': '2px 2px 6px rgba(255, 255, 255, 0.8)',
+
         'yellow-border': '0px 0px 2px rgba(245, 158, 11, 1)',
         'yellow-sm': '1px 1px 2px rgba(245, 158, 11, 0.4)',
         'yellow-md': '2px 2px 4px rgba(245, 158, 11, 0.6)',
@@ -114,9 +115,10 @@ const config = {
       backgroundImage: {
         ellipse: 'radial-gradient(ellipse at top, var(--tw-gradient-stops))',
       },
+
     },
   },
-  plugins: [ require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
 
 export default config;

@@ -2,7 +2,11 @@ import React from 'react';
 import ArticleWrapper from './ArticleWrapper';
 
 const OurStoryArticles = () => (
-  <div className="w-full h-max bg-ellipse from-custom-red-500 via-white to-transparent pt-20 pb-10">
+  <div className="w-full h-max bg-ellipse from-white to-custom-orange-200 pt-20 pb-10 relative">
+    <div
+      className="w-full h-2 bg-gradient-to-b from-custom-red-500 to-transparent absolute top-0"
+      aria-hidden
+    />
     <div className="flex flex-col gap-y-20 px-10 lg:px-20">
       <ArticleWrapper
         description={`Welcome to "I Love Ice Cream," your go-to spot for the creamiest ice creams and the most delightful boba teas in the city. Celebrating four sweet years, we're not just a dessert haven – we're a taste adventure for families and a trendy hangout for college students. Since 2020, we've been crafting exceptional ice cream flavors using the finest ingredients, becoming a beloved part of the community. And that's not all – our handcrafted boba teas add an extra layer of excitement to your "I Love Ice Cream" experience.`}

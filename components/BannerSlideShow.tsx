@@ -26,9 +26,9 @@ function BannerSlideShow() {
           key={index}
           src={image.src}
           className={cn(
-            'object-cover scale-110 -translate-x-4 opacity-0 transition-all duration-500 ease-in-out user-drag-none',
+            'object-cover scale-125 -translate-x-4 opacity-0 transition-all duration-500 ease-in-out rotate-6 user-drag-none',
             index === currentImageIndex
-              ? 'z-10 opacity-100 scale-100 translate-x-0'
+              ? 'z-10 opacity-100 scale-100 translate-x-0 rotate-0'
               : ''
           )}
           alt={image.alt}

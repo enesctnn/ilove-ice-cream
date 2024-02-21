@@ -15,8 +15,16 @@ function CommercialVideo() {
   const { scrollY } = useScroll();
   const videoPosition = useTransform(scrollY, [0, 1000], [0, 1000]);
   const videoScale = useTransform(scrollY, [0, 1000], [1, 3]);
+  const componentOpacity = useTransform(
+    scrollY,
+    [0, 200, 400, 600],
+    [1, 0.85, 0.85, 0.3]
+  );
   return (
-    <div className="relative select-none overflow-hidden max-h-[800px] min-h-[300px]">
+    <motion.div
+      className="relative select-none overflow-hidden max-h-[800px] min-h-[300px] transition-opacity ease-linear duration-75"
+      style={{ opacity: componentOpacity }}
+    >
       <div
         className={cn(
           font.className,
@@ -48,7 +56,7 @@ function CommercialVideo() {
       >
         <source src="/commercial-video.mp4" type="video/mp4" />
       </motion.video>
-    </div>
+    </motion.div>
   );
 }
 
