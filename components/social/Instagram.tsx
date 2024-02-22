@@ -20,7 +20,8 @@ const font = Caveat({
 });
 
 async function Instagram() {
-  const posts = (await getInstagramPosts()) as InstagramGridProps[];
+  const posts =
+    ((await getInstagramPosts()) as InstagramGridProps[]) || undefined;
   return (
     <div className="space-y-10 pt-10 pb-32 bg-ellipse from-custom-red-100 to-custom-red-400">
       <h1
@@ -42,6 +43,11 @@ async function Instagram() {
           >
             <InstagramGrid posts={posts} />
           </Suspense>
+        )}
+        {!posts && (
+          <h2 className="text-4xl uppercase text-white">
+            Instagram Server is currently not available.
+          </h2>
         )}
       </MaxWidthWrapper>
     </div>
