@@ -7,9 +7,11 @@ import InstagramGrid, { InstagramGridProps } from './InstagramGrid';
 import { PiInstagramLogoDuotone } from 'react-icons/pi';
 
 const getInstagramPosts = async () => {
-  const data = await fetch(url, { next: { revalidate: 3600 } });
-  const feed = await data.json();
-  return feed.data;
+  try {
+    const data = await fetch(url, { next: { revalidate: 3600 } });
+    const feed = await data.json();
+    return feed.data;
+  } catch {}
 };
 
 const font = Caveat({
@@ -32,13 +34,15 @@ async function Instagram() {
       </h1>
 
       <MaxWidthWrapper>
-        <Suspense
-          fallback={
-            <p className="text-center text-xl mt-10">Loding Posts . . . </p>
-          }
-        >
-          <InstagramGrid posts={posts} />
-        </Suspense>
+        {posts && (
+          <Suspense
+            fallback={
+              <p className="text-center text-xl mt-10">Loding Posts . . . </p>
+            }
+          >
+            <InstagramGrid posts={posts} />
+          </Suspense>
+        )}
       </MaxWidthWrapper>
     </div>
   );
