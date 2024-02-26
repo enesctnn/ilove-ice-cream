@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 function OurStoryPage() {
   return (
     <>
-      <BannerSlideShow />
       <OurStoryArticles />
     </>
   );

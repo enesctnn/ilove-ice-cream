@@ -8,7 +8,7 @@ const NavbarAnimationWrapper = ({
   children: React.ReactNode;
 }) => {
   const { scrollY } = useScroll();
-  const headerPosition = useTransform(scrollY, [0, 200], [0, -280]);
+  const headerPosition = useTransform(scrollY, [0, 200], [0, -300]);
   return (
     <motion.div
       style={{ y: headerPosition }}

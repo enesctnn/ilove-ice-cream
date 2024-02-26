@@ -1,12 +1,12 @@
 export const MENU_CATEGORIES = [
   {
     label: 'Home',
-    value: 'home' as const,
+    value: '/' as const,
     featured: [{}],
   },
   {
     label: 'Our Story',
-    value: 'our-story' as const,
+    value: '/our-story' as const,
     featured: [
       {
         name: '',
@@ -17,7 +17,7 @@ export const MENU_CATEGORIES = [
   },
   {
     label: 'Best Sellers',
-    value: 'best-sellers' as const,
+    value: '/best-sellers' as const,
     featured: [
       {
         name: '',

@@ -1,8 +1,8 @@
+import Navbar from '@/components/Navbar/Navbar';
+import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { cn } from '@/lib/utils';
-import Navbar from '@/components/Navbar/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
       >
         <main className="relative flex flex-col min-h-screen inset-0 bg-black bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:10px_10px]">
           <Navbar />
-          <div className="flex-grow flex-1 ">{children}</div>
+          <div className="flex-grow flex-1">{children}</div>
         </main>
       </body>
     </html>

@@ -5,10 +5,11 @@ import { Suspense } from 'react';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import InstagramGrid, { InstagramGridProps } from './InstagramGrid';
 import { PiInstagramLogoDuotone } from 'react-icons/pi';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
 
 const getInstagramPosts = async () => {
   try {
-    const data = await fetch(url, { next: { revalidate: 3600 } });
+    const data = await fetch(url, { cache: 'no-store' });
     const feed = await data.json();
     return feed.data;
   } catch {}
@@ -24,21 +25,32 @@ async function Instagram() {
     ((await getInstagramPosts()) as InstagramGridProps[]) || undefined;
   return (
     <div className="space-y-10 pt-10 pb-32 bg-ellipse from-custom-red-100 to-custom-red-400">
-      <h1
+      <h2
         className={cn(
-          'text-5xl p-5 select-none text-white drop-shadow-black-md flex items-center justify-center gap-x-5',
-          font.className
+          'p-5 select-none flex items-center justify-center gap-x-5 '
         )}
       >
-        Share More Ice Cream On Instagram!
-        <PiInstagramLogoDuotone className="hover:scale-110 transition-all" />
-      </h1>
+        <TextGenerateEffect
+          words="Share More Ice Cream On Instagram!"
+          textClassName={cn(
+            '!text-white text-5xl drop-shadow-black-md',
+            font.className
+          )}
+        />
+        <PiInstagramLogoDuotone
+          size={60}
+          className="hover:scale-110 transition-all"
+          color="white"
+        />
+      </h2>
 
       <MaxWidthWrapper>
         {posts && (
           <Suspense
             fallback={
-              <p className="text-center text-xl mt-10">Loding Posts . . . </p>
+              <p className="text-center text-4xl mt-10 animate-pulse">
+                Loding Posts . . .
+              </p>
             }
           >
             <InstagramGrid posts={posts} />
