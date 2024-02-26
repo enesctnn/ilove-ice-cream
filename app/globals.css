@@ -82,3 +82,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .footersection {
+    @apply flex-1 flex flex-col items-center h-full my-auto;
+  }
+  .footersection p {
+    @apply text-lg xl:text-xl 2xl:text-2xl;
+  }
+  .footerheader {
+    @apply text-xl xl:text-3xl 2xl:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-emerald-100 to-emerald-700;
+  }
+}

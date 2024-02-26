@@ -1,4 +1,3 @@
-import BannerSlideShow from '@/components/BannerSlideShow';
 import OurStoryArticles from '@/components/OurStoryArticles';
 import { Metadata } from 'next';
 

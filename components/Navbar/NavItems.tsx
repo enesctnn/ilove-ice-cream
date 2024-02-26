@@ -30,12 +30,7 @@ function NavItems() {
       </Link>
       <div className="space-x-5 flex-1 flex flex-col items-center mt-auto gap-y-4">
         <div className="flex justify-evenly w-full">
-          <CustomLink
-            href="https://mag.wcoomd.org/uploads/2018/05/blank.pdf"
-            isPdf
-          >
-            Best Sellers
-          </CustomLink>
+          <CustomLink href="/best-sellers">Best Sellers</CustomLink>
           <CustomLink href="/ice-creams.pdf" isPdf>
             Menu
           </CustomLink>

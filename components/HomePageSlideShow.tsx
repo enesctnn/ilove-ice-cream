@@ -44,7 +44,7 @@ function HomePageSlideShow() {
             buttonVariants({
               variant: 'link',
             }),
-            'text-black text-3xl lg:text-4xl drop-shadow-yellow-border hover:drop-shadow-white-border hover:opacity-90 hover:scale-105 transition-all',
+            'text-black !text-3xl lg:!text-4xl drop-shadow-yellow-border hover:drop-shadow-white-border hover:opacity-90 hover:scale-105 transition-all',
             font.className
           )}
         >

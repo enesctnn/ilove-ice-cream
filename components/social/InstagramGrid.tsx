@@ -53,6 +53,7 @@ function InstagramGrid({ posts }: { posts: InstagramGridProps[] }) {
     >
       {pickedPosts.map((post) => (
         <motion.a
+          suppressHydrationWarning
           key={post.id}
           href={post.permalink}
           style={{ rotate: 0 }}
@@ -75,6 +76,7 @@ function InstagramGrid({ posts }: { posts: InstagramGridProps[] }) {
             src={post.media_url}
             alt={post.caption || 'an instagram post with no caption'}
             fill
+            suppressHydrationWarning
           />
         </motion.a>
       ))}

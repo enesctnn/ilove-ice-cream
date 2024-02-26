@@ -46,7 +46,7 @@ function BannerSlideShow({
         />
       ))}
       <Button
-        className="absolute bottom-0 right-5 z-50 rounded-t-sm rounded-b-none lg:text-lg transition-all duration animate-bounce hover:animate-none active:animate-ping"
+        className="absolute bottom-0 right-5 z-50 rounded-t-sm rounded-b-none lg:!text-lg transition-all duration animate-bounce hover:animate-none active:animate-ping"
         variant="custom"
       >
         Contact us
