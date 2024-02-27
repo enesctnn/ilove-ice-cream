@@ -1,7 +1,7 @@
 import ArticleWrapper from './ArticleWrapper';
 
 const OurStoryArticles = () => (
-  <div className="w-full min-w-max h-max bg-ellipse from-custom-red-100 to-custom-red-400 pt-64 pb-40 relative">
+  <div className="w-full min-w-max h-max bg-ellipse from-custom-red-100 via-custom-red-200 to-custom-red-300 pt-64 pb-40 relative">
     <div
       className="w-full h-2 bg-gradient-to-b from-custom-red-500 to-transparent absolute top-0"
       aria-hidden

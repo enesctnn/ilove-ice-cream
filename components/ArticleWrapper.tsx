@@ -20,8 +20,8 @@ function ArticleWrapper({
   alt,
 }: ArticleWrapperProps) {
   return (
-    <article className="flex aspect-auto flex-col gap-5 md:flex-row my-5 items-top mx-auto mx-none md:mx-0">
-      <div className="bg-ellipse from-custom-red-400 to-black p-2 w-max h-max rounded-sm">
+    <article className="flex aspect-auto flex-col gap-5 md:flex-row my-5 items-start mx-auto">
+      <div className="bg-ellipse from-custom-red-100 to-custom-red-400 p-2 w-max h-max rounded-sm">
         <div className="flex-[2] relative min-w-96 min-h-80 lg:min-w-[450px] lg:min-h-[300px] overflow-hidden ">
           <Image
             className="object-cover object-center hover:scale-110 transition-all duration-300 user-drag-none"

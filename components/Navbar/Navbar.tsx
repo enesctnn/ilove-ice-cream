@@ -1,4 +1,5 @@
 import MaxWidthWrapper from '../MaxWidthWrapper';
+import MobileNavItems from './MobileNavItems';
 import NavItems from './NavItems';
 import NavbarAnimationWrapper from './NavbarAnimationWrapper';
 
@@ -8,6 +9,7 @@ function Navbar() {
       <header>
         <MaxWidthWrapper>
           <NavItems />
+          <MobileNavItems />
         </MaxWidthWrapper>
       </header>
     </NavbarAnimationWrapper>

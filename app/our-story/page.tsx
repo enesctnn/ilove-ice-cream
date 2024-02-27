@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 function OurStoryPage() {
-  return (
-    <>
-      <OurStoryArticles />
-    </>
-  );
+  return <OurStoryArticles />;
 }
 
 export default OurStoryPage;

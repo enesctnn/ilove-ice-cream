@@ -93,4 +93,10 @@
   .footerheader {
     @apply text-xl xl:text-3xl 2xl:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-emerald-100 to-emerald-700;
   }
+  .navitems {
+    @apply !text-xl md:!text-3xl lg:!text-4xl xl:!text-5xl !font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#111] to-ice-cream-100 pr-1 drop-shadow-white-border;
+  }
+  .mobilenavitems{
+    @apply !text-3xl text-center;
+  }
 }

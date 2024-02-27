@@ -8,11 +8,11 @@ type ProductCardProps = {
 
 function ProductCard({ product }: ProductCardProps) {
   return (
-    <CardContainer >
+    <CardContainer>
       <CardBody className="bg-white relative w-64 md:w-80 2xl:w-96 rounded-xl p-6 border">
         <CardItem
           translateZ="50"
-          className="text-xl font-bold text-neutral-600 lg:text-2xl xl:text-3xl"
+          className="text-xl font-bold text-neutral-600 lg:text-2xl xl:text-3xl select-none"
         >
           {product.title}
         </CardItem>
@@ -21,7 +21,7 @@ function ProductCard({ product }: ProductCardProps) {
             src={product.img}
             height="1000"
             width="1000"
-            className="h-60 w-full object-cover object-center rounded-xl group-hover/card:shadow-xl"
+            className="h-60 w-full object-cover object-center rounded-xl group-hover/card:shadow-xl user-drag-none"
             alt={product.alt}
           />
         </CardItem>

@@ -4,15 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { GiIceCreamScoop } from 'react-icons/gi';
 import { buttonVariants } from '../ui/button';
+import { CustomLink } from "./CustomLink";
 
-const font = Caveat({
+export const font = Caveat({
   subsets: ['latin'],
   weight: ['700'],
 });
 
 function NavItems() {
   return (
-    <div className={cn('flex items-center', font.className)}>
+    <div className={cn('hidden lg:flex items-center', font.className)}>
       <div className="space-x-5 flex-1">
         <CustomLink href="/">Home</CustomLink>
         <CustomLink href="/our-story">Our Story</CustomLink>
@@ -22,7 +23,7 @@ function NavItems() {
         className="hover:scale-110 transition-transform relative h-36 w-36 md:h-40 md:w-40 flex-1"
       >
         <Image
-          className="object-contain object-center"
+          className="object-contain object-center drop-shadow-border"
           fill
           src="/ice-cream.png"
           alt="ice cream logo"
@@ -59,39 +60,4 @@ function NavItems() {
 
 export default NavItems;
 
-const CustomLink = ({
-  href,
-  children,
-  isPdf,
-}: {
-  href: string;
-  children: React.ReactNode;
-  isPdf?: boolean;
-}) => {
-  if (isPdf) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        className={cn(
-          '!text-xl md:!text-3xl lg:!text-4xl xl:!text-5xl !font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-ice-cream-100 pr-1 drop-shadow-white-border',
-          font.className
-        )}
-      >
-        {children}
-      </a>
-    );
-  }
 
-  return (
-    <Link
-      href={href}
-      className={cn(
-        '!text-xl md:!text-3xl lg:!text-4xl xl:!text-5xl !font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-ice-cream-100 pr-1 drop-shadow-white-border',
-        font.className
-      )}
-    >
-      {children}
-    </Link>
-  );
-};
