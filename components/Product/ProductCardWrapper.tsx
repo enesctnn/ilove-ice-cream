@@ -1,5 +1,5 @@
 import ProductCard from '@/components/Product/ProductCard';
-import { SHAKES } from '@/lib/products';
+import { ALLPRODUCTS } from '@/lib/products';
 import { cn } from '@/lib/utils';
 import { Pacifico } from 'next/font/google';
 
@@ -9,7 +9,7 @@ const font = Pacifico({
 });
 
 type ProductCardWrapperProps = {
-  products: typeof SHAKES;
+  products: (typeof ALLPRODUCTS)[number]['products'];
   header: string;
 };
 

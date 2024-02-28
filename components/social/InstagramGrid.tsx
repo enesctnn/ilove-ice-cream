@@ -49,7 +49,7 @@ function InstagramGrid({ posts }: { posts: InstagramGridProps[] }) {
         type: 'spring',
         damping: 6,
       }}
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-5 place-items-center"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-5 place-items-center"
     >
       {pickedPosts.map((post) => (
         <motion.a
@@ -69,7 +69,7 @@ function InstagramGrid({ posts }: { posts: InstagramGridProps[] }) {
             },
           }}
           target="_blank"
-          className="relative w-56 h-56 lg:w-64 lg:h-64 flex bg-black"
+          className="relative w-56 h-56 lg:w-64 lg:h-64 flex bg-black rounded-md overflow-hidden"
         >
           <Image
             className="object-cover object-center"

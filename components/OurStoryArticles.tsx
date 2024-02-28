@@ -1,16 +1,14 @@
 import ArticleWrapper from './ArticleWrapper';
+import { BackgroundBeams } from './ui/background-beams';
 
 const OurStoryArticles = () => (
-  <div className="w-full min-w-max h-max bg-ellipse from-custom-red-100 via-custom-red-200 to-custom-red-300 pt-64 pb-40 relative">
-    <div
-      className="w-full h-2 bg-gradient-to-b from-custom-red-500 to-transparent absolute top-0"
-      aria-hidden
-    />
-    <div className="flex flex-col gap-y-20 px-10 lg:px-20">
+  <div className="w-full min-w-max h-max bg-slate-700 pb-40 relative">
+    <BackgroundBeams />
+    <div className="flex flex-col gap-y-20 px-10 lg:px-20 pt-60">
       <ArticleWrapper
         description={`Welcome to "I Love Ice Cream," your go-to spot for the creamiest ice creams and the most delightful boba teas in the city. Celebrating four sweet years, we're not just a dessert haven – we're a taste adventure for families and a trendy hangout for college students. Since 2020, we've been crafting exceptional ice cream flavors using the finest ingredients, becoming a beloved part of the community. And that's not all – our handcrafted boba teas add an extra layer of excitement to your "I Love Ice Cream" experience.`}
         header="Welcome"
-        image="/cup-ice-cream.png"
+        image="/i-love-ice-cream.png"
         alt="caramel flavor ice cream in blue cup"
       />
       <ArticleWrapper
@@ -18,7 +16,7 @@ const OurStoryArticles = () => (
             Whether you're a family seeking dessert bliss or a college student craving a tasty escape, "I Love Ice Cream" is here to make every moment sweeter. Thanks for four years of love and support – here's to many more years of saying "I Love Ice Cream" with every delightful sip and scoop!
             `}
         header="I Love Ice Cream"
-        image="/i-love-ice-cream.png"
+        image="/cup-ice-cream.png"
         alt="welcome image designed for users"
       />
     </div>

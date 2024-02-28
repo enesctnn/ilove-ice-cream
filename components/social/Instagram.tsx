@@ -24,7 +24,8 @@ async function Instagram() {
   const posts =
     ((await getInstagramPosts()) as InstagramGridProps[]) || undefined;
   return (
-    <div className="space-y-10 pt-10 pb-32 bg-ellipse from-custom-red-100 to-custom-red-400 h-full">
+    <div className="space-y-10 pt-10 pb-32 bg-ellipse from-custom-red-100 to-custom-red-400 h-full relative">
+      <div className="absolute top-0 inset-x-0 h-4 bg-gradient-to-b from-black to-transparent" />
       <h2
         className={cn(
           'p-5 select-none flex items-center justify-center gap-x-5 '

@@ -1,15 +1,18 @@
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
-import { SHAKES } from '@/lib/products';
+import { ALLPRODUCTS } from '@/lib/products';
 import Image from 'next/image';
 
 type ProductCardProps = {
-  product: (typeof SHAKES)[number];
+  product: (typeof ALLPRODUCTS)[number]['products'][number];
 };
+
+const truncateWithEllipses = (text: string, max: number) =>
+  text.substring(0, max - 1) + (text.length > max ? '...' : '');
 
 function ProductCard({ product }: ProductCardProps) {
   return (
     <CardContainer>
-      <CardBody className="bg-white relative w-64 md:w-80 2xl:w-96 rounded-xl p-6 border">
+      <CardBody className="bg-white relative w-64 md:w-80 2xl:w-96 rounded-xl p-6 border lg:h-[26rem]">
         <CardItem
           translateZ="50"
           className="text-xl font-bold text-neutral-600 lg:text-2xl xl:text-3xl select-none"

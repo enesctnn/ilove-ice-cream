@@ -3,8 +3,9 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Button } from './ui/button';
+import { Button, buttonVariants } from './ui/button';
 import { MotionValue, motion } from 'framer-motion';
+import Link from 'next/link';
 
 function BannerSlideShow({
   images,
@@ -20,7 +21,7 @@ function BannerSlideShow({
       setCurrentImageIndex((prevIndex) =>
         prevIndex < images.length - 1 ? prevIndex + 1 : 0
       );
-    }, 5000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [images]);
@@ -28,7 +29,7 @@ function BannerSlideShow({
   return (
     <motion.div
       style={style}
-      className="relative w-full max-h-[1200px] min-h-[700px] overflow-hidden lg:min-h-[850px]"
+      className="relative w-full max-h-[600px] h-[500px] sm:max-h-[1200px] sm:min-h-[700px] overflow-hidden lg:min-h-[850px]"
     >
       {images.map((image, index) => (
         <Image
@@ -45,12 +46,16 @@ function BannerSlideShow({
           quality={100}
         />
       ))}
-      <Button
-        className="absolute bottom-0 right-5 z-50 rounded-t-sm rounded-b-none lg:!text-lg transition-all duration animate-bounce hover:animate-none active:animate-ping"
-        variant="custom"
+      <Link
+        className={buttonVariants({
+          variant: 'custom',
+          className:
+            '!absolute !bottom-0 !right-5 z-50 !rounded-t-sm !rounded-b-none lg:!text-lg xl:!text-2xl !transition-all animate-bounce hover:animate-none active:animate-ping',
+        })}
+        href="/contact-us"
       >
         Contact us
-      </Button>
+      </Link>
     </motion.div>
   );
 }
