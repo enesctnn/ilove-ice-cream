@@ -1,51 +1,41 @@
+import { GiIceCreamScoop } from 'react-icons/gi';
+
 export const MENU_CATEGORIES = [
   {
     label: 'Home',
-    value: '/' as const,
-    featured: [{}],
+    href: '/',
+    featured: {
+      custom: false,
+    },
   },
   {
     label: 'Our Story',
-    value: '/our-story' as const,
-    featured: [
-      {
-        name: '',
-        href: '#',
-        imageSrc: '',
-      },
-    ],
+    href: '/our-story',
+    featured: {
+      custom: false,
+    },
   },
   {
     label: 'Best Sellers',
-    value: '/best-sellers' as const,
-    featured: [
-      {
-        name: '',
-        href: '#',
-        imageSrc: '',
-      },
-    ],
+    href: '/best-sellers',
+    featured: {
+      custom: false,
+    },
   },
   {
     label: 'Menu',
-    value: 'menu' as const,
-    featured: [
-      {
-        name: '',
-        href: '#',
-        imageSrc: '',
-      },
-    ],
+    href: '/menu',
+    featured: {
+      custom: false,
+      pdf: '/ice-creams.pdf',
+    },
   },
   {
     label: 'Order Now',
-    value: 'order-now' as const,
-    featured: [
-      {
-        name: '',
-        href: '#',
-        imageSrc: '',
-      },
-    ],
+    href: '/order-now',
+    featured: {
+      custom: true,
+      Icon: GiIceCreamScoop,
+    },
   },
 ];

@@ -84,7 +84,7 @@ export const ALLPRODUCTS = [
       },
       {
         img: 'https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_1000/https://www.amytreasure.com/wp-content/uploads/2019/07/Salted-Caramel-Milkshake.jpg',
-        title: 'Caramel Milkshake',
+        title: 'Salted Caramel Milkshake',
         alt: 'SALTED CARAMEL MILKSHAKE picture',
       },
       {

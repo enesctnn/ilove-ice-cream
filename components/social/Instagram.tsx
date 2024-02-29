@@ -1,15 +1,15 @@
-import { cn } from '@/lib/utils';
 import { url } from '@/lib/social';
+import { cn } from '@/lib/utils';
 import { Caveat } from 'next/font/google';
 import { Suspense } from 'react';
-import MaxWidthWrapper from '../MaxWidthWrapper';
-import InstagramGrid, { InstagramGridProps } from './InstagramGrid';
 import { PiInstagramLogoDuotone } from 'react-icons/pi';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
+import InstagramGrid, { InstagramGridProps } from './InstagramGrid';
 
 const getInstagramPosts = async () => {
   try {
-    const data = await fetch(url, { cache: 'no-store' });
+    const data = await fetch(url);
     const feed = await data.json();
     return feed.data;
   } catch {}
@@ -25,7 +25,6 @@ async function Instagram() {
     ((await getInstagramPosts()) as InstagramGridProps[]) || undefined;
   return (
     <div className="space-y-10 pt-10 pb-32 bg-ellipse from-custom-red-100 to-custom-red-400 h-full relative">
-      <div className="absolute top-0 inset-x-0 h-4 bg-gradient-to-b from-black to-transparent" />
       <h2
         className={cn(
           'p-5 select-none flex items-center justify-center gap-x-5 '
@@ -58,8 +57,8 @@ async function Instagram() {
           </Suspense>
         )}
         {!posts && (
-          <h2 className="text-4xl uppercase text-white">
-            Instagram Server is currently not available.
+          <h2 className="text-3xl capitalize text-white text-center">
+            Sorry Instagram Server is currently not available.
           </h2>
         )}
       </MaxWidthWrapper>

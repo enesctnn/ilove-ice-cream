@@ -11,7 +11,7 @@ function Footer() {
   return (
     <footer
       className={cn(
-        'flex-1 max-sm:flex-col flex bg-gradient-to-t from-[#111] to-black text-white py-5',
+        'flex-1 max-sm:flex-col flex bg-gradient-to-t from-[#111] to-black text-white py-5 max-h-max',
         font.className
       )}
     >
