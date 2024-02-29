@@ -1,16 +1,23 @@
 'use client';
 
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { useHomePopUpContext } from '@/context/homepopupcontext';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 function HomePopUp() {
   const [domLoaded, setDomLoaded] = useState(false);
+  const { domLoadedFirstTime, toggleDomLoaded } = useHomePopUpContext();
+
   useEffect(() => setDomLoaded(true), []);
+
   return (
     domLoaded && (
-      <Dialog defaultOpen>
+      <Dialog
+        defaultOpen={domLoadedFirstTime}
+        onOpenChange={() => toggleDomLoaded()}
+      >
         <DialogContent className="max-w-sm sm:max-w-lg md:max-w-xl xl:max-w-2xl 2xl:max-w-5xl !flex items-center justify-between !p-0 overflow-hidden min-h-max">
           <div className="relative h-[400px] xl:h-[600px] flex-1 hover:scale-105 transition-transform">
             <Image
