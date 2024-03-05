@@ -6,9 +6,6 @@ type ProductCardProps = {
   product: (typeof ALLPRODUCTS)[number]['products'][number];
 };
 
-const truncateWithEllipses = (text: string, max: number) =>
-  text.substring(0, max - 1) + (text.length > max ? '...' : '');
-
 function ProductCard({ product }: ProductCardProps) {
   return (
     <CardContainer>

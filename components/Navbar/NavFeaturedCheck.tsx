@@ -20,13 +20,38 @@ export interface NavFeaturedCheckI {
  * @returns {JSX.Element}
  */
 export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
+  if (item.featured.custom && item.featured.Icon && item.featured.blank) {
+    const Icon = item.featured.Icon;
+    return (
+      <a
+        onClick={onClick}
+        key={item.label}
+        href={item.featured.href}
+        target="_blank"
+        className={cn(
+          buttonVariants({
+            variant: 'ice-cream',
+            size: 'custom',
+            className: 'lg:!text-4xl',
+          }),
+          'group'
+        )}
+      >
+        {item.label}
+        <Icon
+          className="rotate-90 group-hover:rotate-180 transition-transform ml-2 -scale-y-100"
+          size={32}
+        />
+      </a>
+    );
+  }
   if (item.featured.custom && item.featured.Icon) {
     const Icon = item.featured.Icon;
     return (
       <Link
         onClick={onClick}
         key={item.label}
-        href={item.href}
+        href={item.featured.href}
         className={cn(
           buttonVariants({
             variant: 'ice-cream',
@@ -44,7 +69,7 @@ export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
       </Link>
     );
   }
-  if (item.featured.pdf) {
+  if (item.featured.blank) {
     return (
       <CustomLink
         onClick={onClick}
@@ -61,7 +86,7 @@ export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
     <CustomLink
       onClick={onClick}
       key={item.label}
-      href={item.href}
+      href={item.href || ''}
       className="text-center"
     >
       {item.label}

@@ -24,18 +24,18 @@ export const MENU_CATEGORIES = [
   },
   {
     label: 'Menu',
-    href: 'custom',
     featured: {
       custom: false,
-      pdf: true,
+      blank: true,
       href: '/ice-creams.pdf',
     },
   },
   {
     label: 'Order Now',
-    href: '/order-now',
     featured: {
       custom: true,
+      blank: true,
+      href: 'https://order.online/store/i-love-ice-cream-east-york-24456577/?activationPreview=true&hideModal=true&pickup=true',
       Icon: GiIceCreamScoop,
     },
   },
