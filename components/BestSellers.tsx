@@ -7,9 +7,9 @@ function BestSellers() {
     <div className="relative pt-64">
       <SparklesCore
         background="#000000"
-        minSize={0.4}
-        maxSize={1.2}
-        particleDensity={15}
+        minSize={0.5}
+        maxSize={1}
+        particleDensity={5}
         className="absolute inset-0"
         particleColor="#FFFFFF"
       />
