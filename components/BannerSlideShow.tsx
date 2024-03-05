@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { MotionValue, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { buttonVariants } from './ui/button';
 
 function BannerSlideShow({

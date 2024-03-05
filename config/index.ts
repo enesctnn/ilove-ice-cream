@@ -24,10 +24,11 @@ export const MENU_CATEGORIES = [
   },
   {
     label: 'Menu',
-    href: '/menu',
+    href: 'custom',
     featured: {
       custom: false,
-      pdf: '/ice-creams.pdf',
+      pdf: true,
+      href: '/ice-creams.pdf',
     },
   },
   {

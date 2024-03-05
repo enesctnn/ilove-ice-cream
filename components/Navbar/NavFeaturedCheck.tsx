@@ -1,8 +1,8 @@
+import type { MENU_CATEGORIES } from '@/config';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { buttonVariants } from '../ui/button';
 import { CustomLink } from './CustomLink';
-import type { MENU_CATEGORIES } from '@/config';
 
 export interface NavFeaturedCheckI {
   item: (typeof MENU_CATEGORIES)[number];
@@ -49,7 +49,7 @@ export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
       <CustomLink
         onClick={onClick}
         key={item.label}
-        href={item.href}
+        href={item.featured.href}
         isPdf
         className="text-center"
       >
@@ -57,7 +57,6 @@ export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
       </CustomLink>
     );
   }
-
   return (
     <CustomLink
       onClick={onClick}
