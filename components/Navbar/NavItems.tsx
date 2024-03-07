@@ -1,15 +1,13 @@
 import { MENU_CATEGORIES } from '@/config';
 import { cn } from '@/lib/utils';
-import { Caveat } from 'next/font/google';
+import localFont from '@next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NavFeaturedCheck } from './NavFeaturedCheck';
 
-export const font = Caveat({
-  subsets: ['latin'],
-  weight: ['700'],
+const myFont = localFont({
+  src: [{ path: '../../public/fonts/Pally-Regular.ttf', weight: '400' }],
 });
-
 function PrimaryNavCategories() {
   const slice = MENU_CATEGORIES.slice(0, 2);
 
@@ -22,7 +20,7 @@ function SecondaryNavCategories() {
 
   return (
     <>
-      <div className="flex justify-evenly w-full">
+      <div className="flex justify-evenly w-full space-x-20 whitespace-nowrap">
         {firstSlice.map((item) => NavFeaturedCheck({ item }))}
       </div>
       {secondSlice.map((item) => NavFeaturedCheck({ item }))}
@@ -32,8 +30,8 @@ function SecondaryNavCategories() {
 
 function NavItems() {
   return (
-    <div className={cn('hidden lg:flex items-center', font.className)}>
-      <div className="space-x-5 flex-1">
+    <div className={cn('hidden lg:flex items-center', myFont.className)}>
+      <div className="space-x-12 flex-1 whitespace-nowrap">
         <PrimaryNavCategories />
       </div>
       <Link
@@ -47,7 +45,7 @@ function NavItems() {
           alt="ice cream logo"
         />
       </Link>
-      <div className="space-x-5 flex-1 flex flex-col items-center mt-auto gap-y-4">
+      <div className="flex-1 flex flex-col items-center mt-auto gap-y-4 space-y-3">
         {<SecondaryNavCategories />}
       </div>
     </div>

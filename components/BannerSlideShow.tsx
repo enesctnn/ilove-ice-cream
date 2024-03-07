@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { MotionValue, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { buttonVariants } from './ui/button';
 
 function BannerSlideShow({
@@ -53,8 +53,9 @@ function BannerSlideShow({
       <Link
         className={buttonVariants({
           variant: 'custom',
+          size: 'custom',
           className:
-            '!absolute !bottom-0 !right-5 z-50 !rounded-t-sm !rounded-b-none lg:!text-lg xl:!text-2xl !transition-all animate-bounce hover:animate-none active:animate-ping',
+            '!absolute !bottom-0 !right-5 z-50 !rounded-t-sm !rounded-b-none !transition-all animate-bounce hover:animate-none active:animate-ping',
         })}
         href="/contact-us"
       >

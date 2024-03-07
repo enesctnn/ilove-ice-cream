@@ -15,7 +15,7 @@ type ProductCardWrapperProps = {
 
 function ProductCardWrapper({ products, header }: ProductCardWrapperProps) {
   return (
-    <section className={cn(font.className)}>
+    <section className={cn(font.className, 'pb-28 space-y-10')}>
       <div className="w-full flex flex-col overflow-hidden justify-center items-center">
         <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-white relative z-20 capitalize pt-2 select-none w-full text-center">
           {header}
@@ -29,7 +29,9 @@ function ProductCardWrapper({ products, header }: ProductCardWrapperProps) {
         </div>
       </div>
 
-      <div className={cn('flex flex-wrap justify-center h-full gap-x-5')}>
+      <div
+        className={cn('flex flex-wrap justify-center h-full gap-x-5 gap-y-10')}
+      >
         {products.map((product) => (
           <ProductCard key={product.title} product={product} />
         ))}

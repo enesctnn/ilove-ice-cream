@@ -1,8 +1,10 @@
-'use client';
-
 import { cn } from '@/lib/utils';
+import localFont from '@next/font/local';
 import Link from 'next/link';
-import { font } from './NavItems';
+
+const myFont = localFont({
+  src: [{ path: '../../public/fonts/Pally-Regular.ttf', weight: '400' }],
+});
 
 export const CustomLink = ({
   href,
@@ -22,7 +24,7 @@ export const CustomLink = ({
       <a
         href={href}
         target="_blank"
-        className={cn('navitems', font.className, className)}
+        className={cn('navitems', myFont.className, className)}
         onClick={onClick}
       >
         {children}
@@ -33,7 +35,7 @@ export const CustomLink = ({
   return (
     <Link
       href={href}
-      className={cn('navitems', font.className, className)}
+      className={cn('navitems', myFont.className, className)}
       onClick={onClick}
     >
       {children}
