@@ -14,6 +14,13 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import { IoMenuOutline } from 'react-icons/io5';
 import { NavFeaturedCheck } from './NavFeaturedCheck';
+import { Caveat } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const font = Caveat({
+  subsets: ['latin'],
+  weight: ['700'],
+});
 
 const NavigationItems = ({ onClick }: { onClick: () => void }) =>
   MENU_CATEGORIES.map((item) => NavFeaturedCheck({ item, onClick }));
@@ -40,19 +47,29 @@ function MobileNavItems() {
         />
       </Link>
       <Sheet>
-        <SheetTrigger className="flex-1">
-          <IoMenuOutline
-            className="hover:scale-105 transition-transform text-white drop-shadow-border ml-auto"
-            size="50"
-          />
-        </SheetTrigger>
-        <SheetContent side="top" className="!flex !flex-col items-center">
+        <div className="flex-1">
+          <SheetTrigger asChild>
+            <IoMenuOutline
+              className="hover:scale-105 transition-transform text-white drop-shadow-border ml-auto cursor-pointer"
+              size="50"
+            />
+          </SheetTrigger>
+        </div>
+        <SheetContent
+          side="top"
+          className="!flex !flex-col items-center gap-y-7 !bg-emerald-600/90 !border-none"
+        >
           <SheetHeader>
-            <SheetTitle className="!text-4xl text-center">
+            <SheetTitle
+              className={cn(
+                '!text-5xl text-center text-white font-bold',
+                font.className
+              )}
+            >
               Welcome To I Love Ice Cream
             </SheetTitle>
-            <NavigationItems onClick={closeModalHandler} />
           </SheetHeader>
+          <NavigationItems onClick={closeModalHandler} />
           <SheetClose ref={sheetCloseRef} hidden />
         </SheetContent>
       </Sheet>

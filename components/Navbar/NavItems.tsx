@@ -29,7 +29,7 @@ function SecondaryNavCategories() {
 function NavItems() {
   return (
     <div className={cn('hidden lg:flex items-center', myFont.className)}>
-      <div className="space-x-12 flex-1 whitespace-nowrap">
+      <div className="space-x-12 flex-1 whitespace-nowrap flex">
         <PrimaryNavCategories />
       </div>
       <Link

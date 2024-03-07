@@ -56,7 +56,7 @@ export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
           buttonVariants({
             variant: 'ice-cream',
             size: 'custom',
-            className: 'lg:!text-4xl',
+            className: 'lg:!text-4xl hover:scale-105',
           }),
           'group'
         )}
@@ -69,7 +69,7 @@ export function NavFeaturedCheck({ item, onClick }: NavFeaturedCheckI) {
       </Link>
     );
   }
-  if (item.featured.blank) {
+  if (item.featured.blank && item.featured.href) {
     return (
       <CustomLink
         onClick={onClick}
