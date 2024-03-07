@@ -2,16 +2,14 @@
 
 import { images } from '@/lib/home-slide-images';
 import { cn } from '@/lib/utils';
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import BannerSlideShow from './BannerSlideShow';
 import { buttonVariants } from './ui/button';
 import { TextGenerateEffect } from './ui/text-generate-effect';
 
-const myFont = localFont({
-  src: [{ path: '../public/fonts/Neco-Regular.ttf', weight: '400' }],
-});
+const myFont = localFont({ src: '../public/fonts/Neco-Regular.ttf' });
 
 function HomePageSlideShow() {
   const { scrollY } = useScroll();

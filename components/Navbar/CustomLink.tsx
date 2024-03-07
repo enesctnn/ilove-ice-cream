@@ -1,10 +1,8 @@
 import { cn } from '@/lib/utils';
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 import Link from 'next/link';
 
-const myFont = localFont({
-  src: [{ path: '../../public/fonts/Pally-Regular.ttf', weight: '400' }],
-});
+const myFont = localFont({ src: '../../public/fonts/Pally-Regular.ttf' });
 
 export const CustomLink = ({
   href,

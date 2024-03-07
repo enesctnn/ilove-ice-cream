@@ -1,13 +1,11 @@
 import { MENU_CATEGORIES } from '@/config';
 import { cn } from '@/lib/utils';
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NavFeaturedCheck } from './NavFeaturedCheck';
 
-const myFont = localFont({
-  src: [{ path: '../../public/fonts/Pally-Regular.ttf', weight: '400' }],
-});
+const myFont = localFont({ src: '../../public/fonts/Pally-Regular.ttf' });
 function PrimaryNavCategories() {
   const slice = MENU_CATEGORIES.slice(0, 2);
 
@@ -45,7 +43,7 @@ function NavItems() {
           alt="ice cream logo"
         />
       </Link>
-      <div className="flex-1 flex flex-col items-center mt-auto gap-y-4 space-y-3">
+      <div className="flex-1 flex flex-col items-center mt-auto gap-y-5">
         {<SecondaryNavCategories />}
       </div>
     </div>
