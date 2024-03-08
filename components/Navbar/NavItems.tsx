@@ -43,7 +43,7 @@ function NavItems() {
           alt="ice cream logo"
         />
       </Link>
-      <div className="flex-1 flex flex-col items-center mt-auto gap-y-5">
+      <div className="flex-1 flex flex-col items-center mt-auto gap-y-3">
         {<SecondaryNavCategories />}
       </div>
     </div>
