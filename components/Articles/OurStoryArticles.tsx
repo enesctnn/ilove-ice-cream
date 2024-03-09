@@ -1,5 +1,5 @@
 import ArticleWrapper from './ArticleWrapper';
-import { BackgroundBeams } from './ui/background-beams';
+import { BackgroundBeams } from '../ui/background-beams';
 
 const OurStoryArticles = () => (
   <div className="w-full min-w-max h-max bg-slate-700 pb-40 relative">

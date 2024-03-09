@@ -7,17 +7,17 @@ const myFont = localFont({ src: '../../public/fonts/Pally-Regular.ttf' });
 export const CustomLink = ({
   href,
   children,
-  isPdf,
+  blank,
   className,
   onClick,
 }: {
   href: string;
   children: React.ReactNode;
-  isPdf?: boolean;
+  blank?: boolean;
   className?: string;
   onClick?: () => void;
 }) => {
-  if (isPdf) {
+  if (blank) {
     return (
       <a
         href={href}

@@ -6,10 +6,10 @@ import localFont from 'next/font/local';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import BannerSlideShow from './BannerSlideShow';
-import { buttonVariants } from './ui/button';
-import { TextGenerateEffect } from './ui/text-generate-effect';
+import { buttonVariants } from '../ui/button';
+import { TextGenerateEffect } from '../ui/text-generate-effect';
 
-const myFont = localFont({ src: '../public/fonts/Neco-Regular.ttf' });
+const myFont = localFont({ src: '../../public/fonts/Neco-Regular.ttf' });
 
 function HomePageSlideShow() {
   const { scrollY } = useScroll();

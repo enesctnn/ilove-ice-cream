@@ -1,36 +1,18 @@
-import { MENU_CATEGORIES } from '@/config';
 import { cn } from '@/lib/utils';
 import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
-import { NavFeaturedCheck } from './NavFeaturedCheck';
+import { CustomLink } from './CustomLink';
+import OrderNowButton from './OrderNowButton';
 
 const myFont = localFont({ src: '../../public/fonts/Pally-Regular.ttf' });
-function PrimaryNavCategories() {
-  const slice = MENU_CATEGORIES.slice(0, 2);
-
-  return slice.map((item) => NavFeaturedCheck({ item }));
-}
-
-function SecondaryNavCategories() {
-  const firstSlice = MENU_CATEGORIES.slice(2, 4);
-  const secondSlice = MENU_CATEGORIES.slice(4);
-
-  return (
-    <>
-      <div className="flex justify-evenly w-full space-x-20 whitespace-nowrap">
-        {firstSlice.map((item) => NavFeaturedCheck({ item }))}
-      </div>
-      {secondSlice.map((item) => NavFeaturedCheck({ item }))}
-    </>
-  );
-}
 
 function NavItems() {
   return (
     <div className={cn('hidden lg:flex items-center', myFont.className)}>
       <div className="space-x-12 flex-1 whitespace-nowrap flex">
-        <PrimaryNavCategories />
+        <CustomLink href="/">Home</CustomLink>
+        <CustomLink href="/our-story">Our Story</CustomLink>
       </div>
       <Link
         href="/"
@@ -44,7 +26,13 @@ function NavItems() {
         />
       </Link>
       <div className="flex-1 flex flex-col items-center mt-auto gap-y-3">
-        {<SecondaryNavCategories />}
+        <div className="flex justify-evenly w-full space-x-20 whitespace-nowrap">
+          <CustomLink href="/best-sellers">Best Sellers</CustomLink>
+          <CustomLink href="/ice-creams.pdf" blank>
+            Menu
+          </CustomLink>
+        </div>
+        <OrderNowButton />
       </div>
     </div>
   );

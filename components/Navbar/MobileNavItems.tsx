@@ -8,22 +8,18 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { MENU_CATEGORIES } from '@/config';
+import { cn } from '@/lib/utils';
+import { Caveat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { IoMenuOutline } from 'react-icons/io5';
-import { NavFeaturedCheck } from './NavFeaturedCheck';
-import { Caveat } from 'next/font/google';
-import { cn } from '@/lib/utils';
+import { NavigationItems } from './NavigationItems';
 
 const font = Caveat({
   subsets: ['latin'],
   weight: ['700'],
 });
-
-const NavigationItems = ({ onClick }: { onClick: () => void }) =>
-  MENU_CATEGORIES.map((item) => NavFeaturedCheck({ item, onClick }));
 
 function MobileNavItems() {
   const sheetCloseRef = useRef<HTMLButtonElement>(null);
