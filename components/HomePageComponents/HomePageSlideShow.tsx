@@ -31,7 +31,7 @@ function HomePageSlideShow() {
           className="text-center"
           textClassName={cn(
             myFont.className,
-            '!text-5xl xl:!text-6xl 2xl:text-8xl drop-shadow-white-border !text-transparent !bg-clip-text !bg-gradient-to-t !from-black !to-ice-cream-100 !py-1 !pr-3'
+            'sm:!text-5xl xl:!text-6xl 2xl:text-8xl drop-shadow-white-border !text-transparent !bg-clip-text !bg-gradient-to-t !from-black !to-ice-cream-100 !py-1 !pr-3'
           )}
         />
         <Link
@@ -40,7 +40,7 @@ function HomePageSlideShow() {
             buttonVariants({
               variant: 'link',
             }),
-            'text-black !text-3xl lg:!text-4xl drop-shadow-yellow-border hover:drop-shadow-white-border hover:opacity-90 hover:scale-105 transition-all',
+            'text-black !text-lg sm:!text-3xl lg:!text-4xl drop-shadow-yellow-border hover:drop-shadow-white-border hover:opacity-90 hover:scale-105 transition-all ',
             myFont.className
           )}
         >

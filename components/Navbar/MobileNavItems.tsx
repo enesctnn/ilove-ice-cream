@@ -53,7 +53,7 @@ function MobileNavItems() {
         </div>
         <SheetContent
           side="top"
-          className="!flex !flex-col items-center gap-y-7 !bg-emerald-600/90 !border-none"
+          className="!flex !flex-col items-center sm:gap-y-5 !bg-emerald-600/90 !border-none"
         >
           <SheetHeader>
             <SheetTitle

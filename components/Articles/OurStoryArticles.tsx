@@ -3,7 +3,7 @@ import { BackgroundBeams } from '../ui/background-beams';
 
 const OurStoryArticles = () => (
   <div className="w-full min-w-max h-max bg-slate-700 pb-40 relative">
-    <BackgroundBeams />
+    <BackgroundBeams className="!absolute !inset-0" />
     <div className="flex flex-col gap-y-20 px-10 lg:px-20 pt-60">
       <ArticleWrapper
         description={`Welcome to "I Love Ice Cream," your go-to spot for the creamiest ice creams and the most delightful boba teas in the city. Celebrating four sweet years, we're not just a dessert haven – we're a taste adventure for families and a trendy hangout for college students. Since 2020, we've been crafting exceptional ice cream flavors using the finest ingredients, becoming a beloved part of the community. And that's not all – our handcrafted boba teas add an extra layer of excitement to your "I Love Ice Cream" experience.`}
