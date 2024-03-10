@@ -55,7 +55,7 @@ function BannerSlideShow({
           variant: 'custom',
           size: 'custom',
           className:
-            '!absolute !bottom-0 !right-5 z-50 !rounded-t-sm !rounded-b-none !transition-all animate-bounce hover:animate-none active:animate-ping',
+            '!absolute !bottom-0 !right-1 sm:!right-5 z-50 !rounded-t-sm !rounded-b-none !transition-all animate-bounce hover:animate-none active:animate-ping',
         })}
         href="/contact-us"
       >

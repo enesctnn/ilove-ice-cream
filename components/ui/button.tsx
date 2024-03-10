@@ -29,7 +29,7 @@ const buttonVariants = cva(
         sm: 'h-8 rounded-md px-3 text-xs',
         lg: 'h-10 rounded-md px-8',
         custom:
-          'h-12 rounded-full px-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl ',
+          'h-7 px-1 sm:h-12 rounded-full sm:px-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl',
         icon: 'h-9 w-9',
       },
     },
