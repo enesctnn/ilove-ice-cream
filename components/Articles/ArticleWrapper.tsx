@@ -24,7 +24,7 @@ function ArticleWrapper({
     <article className="flex aspect-auto flex-col gap-5 lg:flex-row my-5 items-start mx-auto relative p-10">
       <BackgroundBeams className="bg-slate-300/10 rounded-md shadow-md" />
       <div className="flex-[2] bg-ellipse from-custom-red-100 to-custom-red-400 p-2 w-max h-max rounded-sm z-10">
-        <div className="relative w-72 sm:min-w-96 lg:min-w-[450px] overflow-hidden cursor-pointer aspect-square">
+        <div className="relative w-72 sm:w-96 lg:w-[450px] aspect-square overflow-hidden cursor-pointer">
           <Image
             className="absolute object-cover hover:scale-110 transition-all duration-300 user-drag-none"
             src={image}
