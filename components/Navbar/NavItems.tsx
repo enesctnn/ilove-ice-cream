@@ -25,7 +25,7 @@ function NavItems() {
           alt="ice cream logo"
         />
       </Link>
-      <div className="flex-1 flex flex-col items-center mt-auto gap-y-2">
+      <div className="flex-1 flex flex-col items-center mt-auto gap-y-1">
         <div className="flex justify-evenly w-full space-x-20 whitespace-nowrap">
           <CustomLink href="/best-sellers">Best Sellers</CustomLink>
           <CustomLink href="/ice-creams.pdf" blank>

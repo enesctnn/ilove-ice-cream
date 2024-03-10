@@ -21,10 +21,10 @@ function ArticleWrapper({
   alt,
 }: ArticleWrapperProps) {
   return (
-    <article className="flex aspect-auto flex-col gap-5 lg:flex-row my-5 items-start mx-auto relative p-10">
-      <BackgroundBeams className="bg-slate-300/10 rounded-md shadow-md" />
-      <div className="flex-[2] bg-ellipse from-custom-red-100 to-custom-red-400 p-2 w-max h-max rounded-sm z-10">
-        <div className="relative w-72 sm:w-96 lg:w-[450px] aspect-square overflow-hidden cursor-pointer">
+    <article className="flex aspect-auto flex-col gap-5 lg:flex-row max-lg:items-center my-5 items-start mx-auto relative p-5 sm:p-10 w-full">
+      <BackgroundBeams className="bg-slate-300/10 rounded-md shadow-md " />
+      <div className="flex-[2] rounded-sm z-10">
+        <div className="relative w-56 md:w-[450px] aspect-square overflow-hidden cursor-pointer outline outline-[6px] outline-custom-red-300">
           <Image
             className="absolute object-cover hover:scale-110 transition-all duration-300 user-drag-none"
             src={image}
@@ -38,7 +38,7 @@ function ArticleWrapper({
         <h1 className="text-5xl font-medium drop-shadow-border text-white xl:text-6xl">
           {header}
         </h1>
-        <p className="text-lg leading-tight lg:leading-relaxed lg:text-2xl drop-shadow-black-md text-white w-72 sm:w-96 xl:w-[600px] ">
+        <p className="text-sm sm:text-lg leading-tight lg:leading-relaxed lg:text-2xl drop-shadow-black-md text-white pr-5 text-left">
           {description}
         </p>
       </section>
